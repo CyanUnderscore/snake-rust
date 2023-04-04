@@ -7,7 +7,7 @@ struct Player {
 }
 
 fn init() {
-   window  = [[" "; 10] 10] 
+   window  = [[" "; 10]; 10]; 
 }
 
 
