@@ -67,8 +67,8 @@ fn restart() {
 fn load_coins(mut window : [[char ; 40]; 20]) -> [[char ; 40]; 20] {
     let mut placed : bool = false;
     while !placed {
-        let x = rand::thread_rng().gen_range(0..10);
-        let y = rand::thread_rng().gen_range(0..10);
+        let x = rand::thread_rng().gen_range(0..40);
+        let y = rand::thread_rng().gen_range(0..20);
         if window[y][x] == ' ' {
             window[y][x] = 'C';
             placed = true;
@@ -99,7 +99,7 @@ fn main() {
             }
         }
         match window[player.location.1][player.location.0] {
-            'C' => {blanck_window[player.location.1][player.location.0] = ' '; score += 1; println!("got one");},      
+            'C' => {blanck_window[player.location.1][player.location.0] = ' '; score += 1; println!("got one"); player.lenght += 1;},      
             _ => () 
         }
         window[player.location.1][player.location.0] = '#';
